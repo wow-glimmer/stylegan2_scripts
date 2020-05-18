@@ -13,7 +13,7 @@ def img_to_pages(target_image_count):
     print(target_image_count // 15)
 api_url = 'https://derpibooru.org/api/v1/json/search/images?page={0}&q={1}'
 
-# configure this
+# configure this   ! change upvotes.lt:400
 twi_tags = 'twilight sparkle, upvotes.lt:400, -humanized, -3d, -anthro, solo, -eqg, -animated, -plushie, -meme, -sketch'
 star_tags = 'starlight glimmer, upvotes.lt:400, -humanized, -3d, -anthro, solo, -eqg, -animated, -plushie, -meme, -sketch'
 tags = twi_tags
