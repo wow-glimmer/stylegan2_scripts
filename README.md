@@ -4,3 +4,6 @@
 2. fix_jpeg_extensions.py
 3. process_to_1024.py
 4. 7zip->tar folder
+5. upload to gdrive
+
+6. edit colab and start training
