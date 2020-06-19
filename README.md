@@ -40,22 +40,38 @@ Just change model file.
 
 # get url for .pkl model
 512x512 cars: !wget http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-car-config-f.pkl
+
 256x256 3d horses: !wget http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-horse-config-f.pkl
+
 or
+
 goto https://github.com/NVlabs/stylegan2
+
 scroll down to 'Additional Material' table
+
 (firefox) F12>Network
+
 Click on download url
+
 Copy url from 200 GET http header
 
+
 # modify colab
+
 In 'install the repo' section:
+
 Change:
    !gdown --id 1UlDmJVLLnBD9SnLSMXeiZRO6g-OMQCA_
+
    !mv stylegan2-ffhq-config-f.pkl network-snapshot-10000.pkl
+
 To:
    (example, change to 256x256)
+   
    #download pkl:
+
    !wget http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-horse-config-f.pkl
+
    #move it:
+   
    !mv stylegan2-horse-config-f.pkl network-snapshot-10000.pkl
