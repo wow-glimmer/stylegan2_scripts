@@ -4,6 +4,27 @@ from PIL import Image
 from argparse import ArgumentParser
 import glob
 
+
+# ----------------------------------------------
+# Config
+# ----------------------------------------------
+
+scan_folder = 'derpibooru_page_downloader\glimmy_twi_2' # non recursive
+output_folder = '256_glim_2'
+target_size = 256
+
+
+start_from = 1 # start from image (if interupted) # is it implemented?
+
+write_mode = True # false means debug mode (print paths only)
+
+scan_dir = pathlib.Path.cwd() / scan_folder
+output_dir = pathlib.Path.cwd() / output_folder
+
+# ----------------------------------------------
+# Code below
+# ----------------------------------------------
+
 def expand2square(pil_img, background_color): #  nkmk / python-tools 
     width, height = pil_img.size
     if width == height:
@@ -19,24 +40,18 @@ def expand2square(pil_img, background_color): #  nkmk / python-tools
         return result
 
 
-# config
-scan_dir = pathlib.Path.cwd() / 'derpibooru_page_downloader' #\All\pinkie pAI-20200514T175116Z-001\pinkie pAI\other_ponies'
-sub_dir = 'all'
-output_dir = pathlib.Path.cwd() / 'dataset_twi_and_glim_fixed/'
-target_size = 1024
-write_mode = True # false means debug mode (print paths only)
 
 # main loop
-scan_dir_len = len(os.listdir(scan_dir / sub_dir))
+scan_dir_len = len(os.listdir(scan_dir))
 ctr = 0
 invalid = 0
-for file_name in os.listdir(scan_dir / sub_dir): ##os.listdir(scan_dir):
+for file_name in os.listdir(scan_dir): ##os.listdir(scan_dir):
     print('iter')
     if not file_name.endswith(('.jpeg', '.jpg', '.png')):
         continue
 
     # open
-    png = Image.open(scan_dir / sub_dir / file_name)
+    png = Image.open(scan_dir / file_name)
     png.load() # required for png.split()
     
     # make transparency white
