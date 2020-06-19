@@ -6,7 +6,9 @@ Scripts:
 - (in dev) Image Sorter (PyQt5)
 
 update:
+
 +fixed jpeg extension issue
+
 +organized configuration code
 
 
@@ -18,11 +20,17 @@ update:
 5. 7zip->tar folder
 
 Tar contents should look like this
+
 dataset.tar: 
+
    1463463.jpg (images processed with process_to_1024.py)
+
    145814.jpg
+
    13891032.jpg
+
    ...
+   
 
 6. upload to google drive
 gdrive: stylegan2/my_dataset.tar
@@ -73,5 +81,5 @@ To:
    !wget http://d36zk2xti64re0.cloudfront.net/stylegan2/networks/stylegan2-horse-config-f.pkl
 
    #move it:
-   
+
    !mv stylegan2-horse-config-f.pkl network-snapshot-10000.pkl
